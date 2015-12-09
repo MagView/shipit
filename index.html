@@ -9,7 +9,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-9">
-            <h2>Scores</h2>
+            <h2>ShipIt Scores</h2>
             <table id="DataTable" class="table">
                 <tr>
                     <th>Project</th>
@@ -36,7 +36,8 @@
   $(document).ready(function () {
     $.ajax({
             url: 'http://mvshipit.webscript.io/results', success: function(data) {
-            drawTable(data);
+            response = $.parseJSON(data);
+            drawTable(response);
             $("#raw").html = data;
         }
     });
