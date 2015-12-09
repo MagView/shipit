@@ -30,11 +30,13 @@
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   
   <script>
-          $.ajax({
-        url: 'http://mvshipit.webscript.io/results', success: function(data) {
+  $(document).ready(function () {
+    $.ajax({
+            url: 'http://mvshipit.webscript.io/results', success: function(data) {
             drawTable(data);
         }
     });
+  }
     
     function drawTable(data) {
         for (var i = 0; i < data.length; i++) {
