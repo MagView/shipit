@@ -31,9 +31,7 @@
   
   <script>
           $.ajax({
-        url: 'http://mvshipit.webscript.io/results'
-        success: function(data, textStatus, jqXHR) {
-            // since we are using jQuery, you don't need to parse response
+        url: 'http://mvshipit.webscript.io/results', success: function(data) {
             drawTable(data);
         }
     });
