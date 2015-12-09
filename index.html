@@ -9,9 +9,16 @@
             IdentityPoolId: 'us-east-1:3ef7ae6c-1c30-47b0-a8f5-571960e1e27b',
         });
         
-        var db = new AWS.DynamoDB();
-        db.listTables(function(err, data) {
-          console.log(data.TableNames);
+        var table = new AWS.DynamoDB({params: {TableName: 'shipit1'}});
+        var key = '1';
+        
+        // Write the item to the table
+        var itemParams = {Item: {id: {S: key}, data: {S: 'data'}}};
+        table.putItem(itemParams, function() {
+          // Read the item from the table
+          table.getItem({Key: {id: {S: key}}}, function(err, data) {
+            console.log(data.Item); // print the item data
+          });
         });
     </script>
 </head>
