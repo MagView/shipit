@@ -1,28 +1,13 @@
 <html>
 <head>
     <title>MagView ShipIt</title>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.22.min.js"></script>
-    <script>
-        // Initialize the Amazon Cognito credentials provider
-        AWS.config.region = 'us-east-1'; // Region
-        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: 'us-east-1:3ef7ae6c-1c30-47b0-a8f5-571960e1e27b',
-        });
-        
-        var table = new AWS.DynamoDB({params: {TableName: 'shipit1'}});
-        var key = '1';
-        
-        // Write the item to the table
-        var itemParams = {Item: {PropectID: {S: key}, data: {S: 'data'}}};
-        table.putItem(itemParams, function() {
-          // Read the item from the table
-          table.getItem({Key: {PropectID: {S: key}}}, function(err, data) {
-            console.log(data.Item); // print the item data
-          });
-        });
-    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/user.css">
 </head>
 <body>
   <p>Hello there friend</p>
+  
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
