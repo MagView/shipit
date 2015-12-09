@@ -26,9 +26,6 @@
           </div>
       </div>
   </div>
-  <div id="raw">
-      ss
-  </div>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   
@@ -38,7 +35,6 @@
             url: 'http://mvshipit.webscript.io/results', success: function(data) {
             response = $.parseJSON(data);
             drawTable(response);
-            $("#raw").html = data;
         }
     });
   });
