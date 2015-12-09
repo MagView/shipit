@@ -2,6 +2,13 @@
 <head>
     <title>MagView ShipIt</title>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.22.min.js"></script>
+    <script>
+        // Initialize the Amazon Cognito credentials provider
+        AWS.config.region = 'us-east-1'; // Region
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            IdentityPoolId: 'us-east-1:3ef7ae6c-1c30-47b0-a8f5-571960e1e27b',
+        });
+    </script>
 </head>
 <body>
   <p>Hello</p>
