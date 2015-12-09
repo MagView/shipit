@@ -8,6 +8,11 @@
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
             IdentityPoolId: 'us-east-1:3ef7ae6c-1c30-47b0-a8f5-571960e1e27b',
         });
+        
+        var db = new AWS.DynamoDB();
+        db.listTables(function(err, data) {
+          console.log(data.TableNames);
+        });
     </script>
 </head>
 <body>
