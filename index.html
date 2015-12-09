@@ -9,7 +9,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-9">
-            <h2>Results</h2>
+            <h2>Scores</h2>
             <table id="DataTable" class="table">
                 <tr>
                     <th>Project</th>
@@ -26,7 +26,9 @@
           </div>
       </div>
   </div>
-  
+  <div id="raw">
+      ss
+  </div>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   
@@ -35,6 +37,7 @@
     $.ajax({
             url: 'http://mvshipit.webscript.io/results', success: function(data) {
             drawTable(data);
+            $("#raw").html = data;
         }
     });
   });
