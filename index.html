@@ -10,6 +10,7 @@
       <div class="row">
           <div class="col-md-9">
             <h1><span class="label label-default">Text 443-569-7778 to vote!</span></h1>
+            <br/>
             <table id="DataTable" class="table">
                 <tr>
                     <th>Project</th>
@@ -50,7 +51,7 @@
         var row = $("<tr />")
         $("#DataTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
         row.append($("<td>" + rowData.project + "</td>"));
-        row.append($("<td>" + rowData.number + "</td>"));
+        row.append($("<td>Text <span class="label label-info">/vote" + rowData.number + "</span></td>"));
         row.append($("<td>" + rowData.result + "</td>"));
     }
   </script>
