@@ -44,23 +44,26 @@
   
   <script>
   $(document).ready(function () {
-    $.ajax({
-            url: 'http://mvshipit.webscript.io/results', success: function(data) {
-            response = $.parseJSON(data);
-            drawTable(response);
-        }
-    });
+    drawData();
     
     $("#btnSubmit").click(function () {
                 $.ajax({
                     url: "http://mvshipit.webscript.io/addproject?num=" + $("#txtNum").val() + "&name=" + $("#txtName").val(), success: function (result) {
                         $("#DataTable").find("tr:gt(0)").remove();
-                        response = $.parseJSON(result);
-                        drawTable(response);
+                        drawData();
                     }
                 });
             });
     });
+    
+    function drawData() {
+        $.ajax({
+            url: 'http://mvshipit.webscript.io/results', success: function(data) {
+            response = $.parseJSON(data);
+            drawTable(response);
+            }
+        });
+    }
     
     function drawTable(data) {
         for (var i = 0; i < data.length; i++) {
