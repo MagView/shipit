@@ -36,6 +36,7 @@
     $.ajax({
             url: 'http://mvshipit.webscript.io/results', success: function(data) {
             response = $.parseJSON(data);
+            response = response.sort(function (a, b) { return a.number.localeCompare(b.number); });
             drawTable(response);
         }
     });
