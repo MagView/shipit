@@ -51,14 +51,14 @@
         }
     });
     
-     $("#btnSumbit").click(function () {
+    $("#btnSubmit").click(function () {
                 $.ajax({
                     url: "http://mvshipit.webscript.io/addproject?status=red", success: function (result) {
-                        setResults(result);
+                        alert(result);
                     }
                 });
             });
-  });
+    });
     
     function drawTable(data) {
         for (var i = 0; i < data.length; i++) {
