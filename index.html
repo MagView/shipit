@@ -52,7 +52,7 @@
         $("#DataTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
         row.append($("<td>" + rowData.project + "</td>"));
         row.append($("<td><span class='info'>Text <span class='label label-info lead'>/vote" + rowData.number + "</span></span></td>"));
-        row.append($("<td>" + rowData.result + "</td>"));
+        row.append($("<td>" + (($.type(rowData.result) === "undefined") "0" : rowData.result) + "</td>"));
     }
   </script>
 </body>
