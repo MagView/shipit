@@ -54,7 +54,9 @@
     $("#btnSubmit").click(function () {
                 $.ajax({
                     url: "http://mvshipit.webscript.io/addproject?status=red", success: function (result) {
-                        alert(result);
+                        $("#DataTable").find("tr:gt(0)").remove();
+                        response = $.parseJSON(result);
+                        drawTable(response);
                     }
                 });
             });
