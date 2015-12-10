@@ -14,11 +14,11 @@
             <form class="form-inline" action="http://mvshipit.webscript.io/addproject" method="POST">
              <div class="input-group"> 
                 <div class="input-group-addon">#</div> 
-                <input type="text" class="form-control" id="inpNumber" placeholder="Number">
+                <input type="text" class="form-control" id="txtNum" placeholder="Number">
             </div>
             <div class="input-group"> 
                 <div class="input-group-addon">Name</div> 
-                <input type="text" class="form-control" id="inpName" placeholder="Project Name">
+                <input type="text" class="form-control" id="txtName" placeholder="Project Name">
             </div>
             <button type="button" id="btnSubmit" class="btn btn-default">Add</button>
             </form>
@@ -53,7 +53,7 @@
     
     $("#btnSubmit").click(function () {
                 $.ajax({
-                    url: "http://mvshipit.webscript.io/addproject?status=red", success: function (result) {
+                    url: "http://mvshipit.webscript.io/addproject?num=" + $("#txtNum").val() + "&name=" + $("#txtName").val(), success: function (result) {
                         $("#DataTable").find("tr:gt(0)").remove();
                         response = $.parseJSON(result);
                         drawTable(response);
