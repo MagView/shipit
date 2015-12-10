@@ -20,7 +20,7 @@
                 <div class="input-group-addon">Name</div> 
                 <input type="text" class="form-control" id="inpName" placeholder="Project Name">
             </div>
-            <button type="submit" class="btn btn-default">Add</button>
+            <button type="button" id="btnSubmit" class="btn btn-default">Add</button>
             </form>
             <br/>
             <table id="DataTable" class="table table-striped">
@@ -50,6 +50,14 @@
             drawTable(response);
         }
     });
+    
+     $("#btnSumbit").click(function () {
+                $.ajax({
+                    url: "http://mvshipit.webscript.io/addproject?status=red", success: function (result) {
+                        setResults(result);
+                    }
+                });
+            });
   });
     
     function drawTable(data) {
